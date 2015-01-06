@@ -37,12 +37,19 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/fusepoolP3/p3-transformer-library</url>
-        <connection>scm:git:https://github.com/fusepoolp3/p3-transformer-library</connection>
-        <developerConnection>scm:git:git@github.com:fusepoolp3/p3-transformer-library.git</developerConnection>
+        <url>https://github.com/fusepoolP3/p3-accept-header-utils</url>
+        <connection>scm:git:https://github.com/fusepoolp3/p3-accept-header-utils</connection>
+        <developerConnection>scm:git:git@github.com:fusepoolp3/p3-accept-header-utils.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </properties>
     <build>
+        <finalName>${finalName}</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -96,9 +103,4 @@
             <version>3.1.0</version>
         </dependency>
     </dependencies>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
 </project>

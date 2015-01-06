@@ -1,1 +1,9 @@
 language: java
+deploy:
+  provider: releases
+  api_key:
+    secure: USmIJdVo8oFWtsmP3oJdFPAg2xwbb2UTWBtGH4JaNdCENuAVQlMrwqY3Fsdk8fnKIdzVNWZ6wiMJHHRR1MxRNulA/TpwONaM+hKZ3P7syV6QrqAeBIkTfA8iLAFREXT9FBAZAQYt75ba/Cl4p0xKb7lvHPBPPqP5fbysAj/8MJI=
+  file: target/*.jar
+  on:
+    tags: true
+    all_branches: true
