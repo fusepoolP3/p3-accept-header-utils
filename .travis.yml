@@ -1,5 +1,5 @@
 language: java
-before_install: mvn install-DfinalName=accept-header-utils-$TRAVIS_TAG
+before_install: mvn install -DfinalName=accept-header-utils-$TRAVIS_TAG
 deploy:
   provider: releases
   api_key:
