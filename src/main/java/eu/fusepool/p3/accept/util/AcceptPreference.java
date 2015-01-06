@@ -74,6 +74,20 @@ public class AcceptPreference {
             return (o.quality - quality);
         }
 
+        public MimeType getMediaType() {
+            return mediaType;
+        }
+
+        /**
+         * The quality in permille 
+         * 
+         * @return the quality as integer from 0 to 1000,
+         */
+        public int getQuality() {
+            return quality;
+        }
+
+        
         @Override
         public String toString() {
             return mediaType + " with q=" + quality + ";";
