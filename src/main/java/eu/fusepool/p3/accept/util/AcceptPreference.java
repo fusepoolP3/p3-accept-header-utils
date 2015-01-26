@@ -207,7 +207,7 @@ public class AcceptPreference {
      * specified in this {@link AcceptPreference}.
      */
     public MimeType getPreferredAccept() {
-        return entries.pollFirst().mediaType;
+        return entries.first().mediaType;
     }
 
     /**

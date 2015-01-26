@@ -62,6 +62,17 @@ public class AcceptPreferenceTest {
     }
 
     @Test
+    public void getPreferredAcceptIsIdempotent() {
+        List<String> entryStrings = new ArrayList<String>();
+        entryStrings.add("image/png;q=.3");
+        entryStrings.add("text/csv;q=.2");
+
+        AcceptPreference acceptHeader = new AcceptPreference(entryStrings);
+        Assert.assertEquals("image/png", acceptHeader.getPreferredAccept().toString());
+        Assert.assertEquals("image/png", acceptHeader.getPreferredAccept().toString());
+    }
+
+    @Test
     public void gettingHighestQuality() {
         List<String> entryStrings = new ArrayList<String>();
 
