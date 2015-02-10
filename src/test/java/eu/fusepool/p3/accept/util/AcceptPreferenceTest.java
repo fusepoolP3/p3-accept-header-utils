@@ -60,6 +60,21 @@ public class AcceptPreferenceTest {
         Assert.assertEquals(300, acceptHeader.getAcceptedQuality(mimeType("text/plain")));
         Assert.assertEquals(0, acceptHeader.getAcceptedQuality(mimeType("application/pdf")));
     }
+    
+    
+    /** 
+     * Java by default sends: text/html, image/gif, image/jpeg, star; q=.2, star/star; q=.2
+     */
+    @Test
+    public void dealingWithJavaDeault() {
+        AcceptPreference acceptHeader = AcceptPreference.fromString("text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2");
+        Assert.assertEquals(1000, acceptHeader.getAcceptedQuality(mimeType("image/jpeg")));
+        Assert.assertEquals(1000, acceptHeader.getAcceptedQuality(mimeType("image/gif")));
+        Assert.assertEquals(200, acceptHeader.getAcceptedQuality(mimeType("image/x-foo")));
+        Assert.assertEquals(200, acceptHeader.getAcceptedQuality(mimeType("text/plain")));
+        Assert.assertEquals(200, acceptHeader.getAcceptedQuality(mimeType("application/pdf")));
+    }
+    
 
     @Test
     public void getPreferredAcceptIsIdempotent() {
