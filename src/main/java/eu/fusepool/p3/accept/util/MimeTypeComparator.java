@@ -28,7 +28,7 @@ import static eu.fusepool.p3.accept.util.MimeUtils.mimeType;
 /**
  * Sorts media types in accordance with an accept-header, falling back to
  * a built-in priority list and to literal sorting to guarantee consistency.
- * <p/>
+ * 
  * Also provides static Utility methods for Mime Type comparison.
  *
  * @author reto
